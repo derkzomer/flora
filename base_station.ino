@@ -1,6 +1,6 @@
 #define SSID        "your_wifi_ssid"
 #define PASS        "your_wifi_password"
-#define DEST_HOST   "www.derkzomer.com.au"
+#define DEST_HOST   "www.derkzomer.com"
 #define TIMEOUT     10000 // mS
 #define CONTINUE    false
 #define HALT        true
@@ -178,7 +178,7 @@ boolean sendToServer(String data){
   // Get connection status
   if (!echoCommand("AT+CIPSTATUS", "OK", CONTINUE)) return false;
   // Build HTTP request.
-  cmd = "POST /add.php HTTP/1.0\r\nHost: www.derkzomer.com.au:80\r\nContent-Type: application/x-www-form-urlencoded\r\nContent-Length: ";
+  cmd = "POST /add.php HTTP/1.0\r\nHost: www.derkzomer.com:80\r\nContent-Type: application/x-www-form-urlencoded\r\nContent-Length: ";
   cmd += data.length();
   cmd += "\r\n";
   cmd += "Connection: Close";
